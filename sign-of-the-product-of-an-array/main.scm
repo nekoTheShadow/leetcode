@@ -1,0 +1,13 @@
+(define (array-sign nums)
+  (let loop ((lst nums) (negative 0))
+    (if (null? lst)
+      (if (= (modulo negative 2) 0) 1 -1)
+      (cond ((> (car lst) 0) (loop (cdr lst) negative))
+            ((< (car lst) 0) (loop (cdr lst) (+ 1 negative)))
+            (else 0)))))
+
+(define (main args)
+  (print (array-sign '(-1 -2 -3 -4 3 2 1)))
+  (print (array-sign '(1 5 0 2 -3)))
+  (print (array-sign '(-1 1 -1 1 -1)))
+0)

@@ -1,0 +1,8 @@
+(define (max-product-difference nums)
+    (define lst (sort nums <))
+    (define a1 (list-ref lst 0))
+    (define a2 (list-ref lst 1))
+    (define b1 (list-ref lst (- (length lst) 1)))
+    (define b2 (list-ref lst (- (length lst) 2)))
+    (- (* b1 b2) (* a1 a2))
+)

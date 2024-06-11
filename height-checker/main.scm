@@ -1,0 +1,11 @@
+(define (height-checker heights)
+    (let loop ((a heights) (b (sort heights <)) (c 0))
+        (if (null? a) 
+            c
+            (if (= (car a) (car b))
+                (loop (cdr a) (cdr b) (+ c 0))
+                (loop (cdr a) (cdr b) (+ c 1))
+            )
+        )
+    )
+)

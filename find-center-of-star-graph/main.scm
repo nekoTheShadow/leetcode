@@ -1,0 +1,7 @@
+(define (find-center edges)
+    (define a1 (list-ref (list-ref edges 0) 0))
+    (define a2 (list-ref (list-ref edges 0) 1))
+    (define b1 (list-ref (list-ref edges 1) 0))
+    (define b2 (list-ref (list-ref edges 1) 1))
+    (if (or (= a1 b1) (= a1 b2)) a1 a2)
+)

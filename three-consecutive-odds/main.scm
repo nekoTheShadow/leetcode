@@ -1,0 +1,6 @@
+(define (three-consecutive-odds arr)
+    (and (>= (length arr) 3)
+         (or (and (= (modulo (car   arr) 2) 1)
+                  (= (modulo (cadr  arr) 2) 1)
+                  (= (modulo (caddr arr) 2) 1))
+             (three-consecutive-odds (cdr arr)))))

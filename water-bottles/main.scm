@@ -1,0 +1,11 @@
+(define (num-water-bottles numBottles numExchange)
+    (let loop ((full numBottles) (empty 0) (total 0))
+        (if (= full 0)
+            (if (< empty numExchange)
+                total
+                (loop (quotient empty numExchange) (modulo empty numExchange) total)
+            )
+            (loop 0 (+ empty full) (+ total full))
+        )
+    )
+)

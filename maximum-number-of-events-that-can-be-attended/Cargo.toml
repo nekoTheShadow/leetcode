@@ -1,0 +1,7 @@
+[package]
+name = "maximum-number-of-events-that-can-be-attended"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+itertools = "0.14.0"

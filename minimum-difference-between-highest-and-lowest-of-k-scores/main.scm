@@ -1,0 +1,10 @@
+(define (minimum-difference nums k)
+    (let ([lst (sort nums <)])
+        (let loop ([xs lst] [ys (drop lst (- k 1))])
+            (if (or (null? xs) (null? ys)) 
+                1000000000
+                (min [- (car ys) (car xs)] [loop (cdr xs) (cdr ys)])
+            )
+        )
+    )
+)

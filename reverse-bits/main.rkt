@@ -1,0 +1,11 @@
+(define (reverse-bits n)
+  (let loop ([i 0] [a 0] [b n])
+    (if (< i 32)
+      (loop (+ i 1)
+            (+ (* 2 a) (remainder b 2))
+            (quotient b 2)
+      )
+      a
+    )
+  )
+)

@@ -1,0 +1,13 @@
+(define (minimum-effort tasks)
+  (for/fold ([acc 0]) ([task (sort tasks < #:key task-key)])
+    (define actual (list-ref task 0))
+    (define minimum (list-ref task 1))
+    (max (+ acc actual) minimum)
+  )
+)
+
+(define (task-key task)
+    (define actual (list-ref task 0))
+    (define minimum (list-ref task 1))
+    (- minimum actual)
+)

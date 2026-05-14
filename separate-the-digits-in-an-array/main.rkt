@@ -1,0 +1,10 @@
+(define (separate-digits nums)
+  (append-map (compose reverse digits) nums)  
+)
+
+(define (digits num)
+  (if (< num 10)
+    (list num)
+    (cons (modulo num 10) (digits (quotient num 10)))
+  )
+)

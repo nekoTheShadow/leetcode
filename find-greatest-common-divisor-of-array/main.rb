@@ -1,0 +1,1 @@
+def find_gcd(nums) = nums.minmax.reduce(:gcd)
